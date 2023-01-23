@@ -1,0 +1,224 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  font-size: 1.6rem;
+}
+
+/* ============================================================================= *\
+                                 Utility classes
+\* ============================================================================= */
+.text-center {
+  text-align: center;
+}
+
+body {
+  background: linear-gradient(45deg, rgb(199, 156, 156), rgb(103, 103, 212));
+  color: #fff;
+}
+h1 {
+  font-size: 4rem;
+  margin: 0;
+  padding-top: 0.5em;
+  text-align: center;
+}
+.container {
+  display: flex;
+  height: 80vh;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.container > .side-bar {
+  flex: 0 0 20%;
+  background-color: rgb(40, 40, 71);
+  padding: 1rem;
+  border-right: 2px SOLID rgba(255, 255, 255, 0.6);
+}
+.container .side-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-tabs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: .5em;
+  overflow-y: auto;
+}
+aside .chat-tab {
+  padding: .5em 1em;
+  background-color: rgba(255, 255, 255, 0.736);
+  color: #111;
+  font-weight: bold;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container main {
+  flex: 1;
+  height: 100%;
+  background-color: #335;
+  overflow-y: auto;
+  position: relative;
+  background-image: url(./dark-tire.png);
+}
+main .chat-board {
+  height: 100%;
+  display: none;
+}
+.container main .chat-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5em 1em;
+  background-image: linear-gradient(to bottom, #335, transparent);
+}
+.container main .chat-head h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.messages {
+  height: calc(100% - 10rem);
+  overflow-y: auto;
+  padding-inline: 1em;
+}
+.message-box {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+}
+.message-box input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0 1em;
+  font-size: 1.8rem;
+  outline: 0;
+}
+.message-box button {
+  position: absolute;
+  right: 0em;
+  width: 8em;
+  height: 100%;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.message {
+  display: flex;
+  flex-direction: column;
+  margin: .7em 0;
+  padding: 0.5em 1em;
+  background-color: #fff7;
+  color: #000;
+  border-radius: 8px;
+}
+.message__author {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #335;
+}
+.popup {
+  display: none;
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(56, 54, 150);
+  padding: 1em 0 2em;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 105;
+}
+.popup .form-control {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 60%;
+  min-width: 200px;
+}
+.popup-content {
+  display: none;
+}
+/* .popup-content.one {
+
+} */
+.popup input,
+.popup button {
+  padding: 0.7em;
+  font-size: 1.7rem;
+}
+.popup input {
+  margin-bottom: 1em;
+}
+.popup button {
+  width: 100%;
+  background-color: rgb(148, 146, 231);
+  color: rgb(22, 22, 22);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.popup.show {
+  display: block;
+}
+.popup-content.show {
+  display: block;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.overlay.show {
+  display: block;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgb(232, 232, 243);
+  color: rgb(22, 22, 22);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5em 1em;
+}
+
+.registerLink{
+  color: #437fdf;
+  font-weight: bold;
+  cursor: pointer;
+}
+.registerLink:hover {
+  text-decoration: underline;
+}

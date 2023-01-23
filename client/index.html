@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chat.nihel</title>
+  <script defer src="./script.js"></script>
+  <script src="./socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <h1>Nihel Chat</h1>
+  <div class="container">
+
+
+    <aside class="side-bar">
+      <div class="side-head">
+        <h2>Chats</h2>
+        <button class="create-room-btn">+</button>
+      </div>
+
+      <!-- --------- Chat tabs go here -------------- -->
+      <div class="chat-tabs"></div>
+      <!-- ------------------------------------------ -->
+    </aside>
+
+
+    <main class="main">
+      <!-- ---- Chat page and components go here ---- -->
+      <div class="chat-board"> </div>
+      <!-- ------------------------------------------ -->
+      <button class="logout-btn">Log out</button>
+    </main>
+
+    <!-- ------------ Popup and overlay go here ------------- -->
+    <div class="popup">
+      <form class="popup-content form" id="registerForm">
+        <h2>Register/ Sign Up</h2>
+        <div class="form-control">
+          <div class="error-message"></div>
+        </div>
+        <div class="form-control">
+          <label for="username">Username: </label>
+          <input type="text" name="username" id="username" placeholder="your username" required>
+        </div>
+        <div class="form-control">
+          <label for="password">Password: </label>
+          <input type="password" name="password" id="password" placeholder="password" required>
+        </div>
+        <div class="form-control">
+          <button type="submit">Log in</button>
+        </div>
+      </form>
+      <form class="popup-content form" id="loginForm">
+        <h2>Log In</h2>
+        <div class="form-control">
+          <div class="error-message"></div>
+        </div>
+        <div class="form-control">
+          <label for="username">Username: </label>
+          <input type="text" name="username" id="username" placeholder="your username" required>
+        </div>
+        <div class="form-control">
+          <label for="password">Password: </label>
+          <input type="password" name="password" id="password" placeholder="password" required>
+        </div>
+        <div class="form-control">
+          <button type="submit">Log in</button>
+        </div>
+        <p>Don't have an account? <span class="registerLink">register here</span></p>
+      </form>
+      <form class="popup-content" id="roomForm">
+        <h2>Create a new room</h2>
+        <div class="form-control">
+          <input type="text" name="chat-name" id="roomName" placeholder="Enter Room Name">
+          <button type="submit" id="create-chat">Create</button>
+        </div>
+      </form>
+    </div>
+    <div class="overlay"></div>
+    <!-- ---------------------------------------------------- -->
+  </div>
+</body>
+
+</html>
