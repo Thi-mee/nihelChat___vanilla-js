@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:3055');
+var socket = io.connect('https://nihelchat-vanilla.onrender.com');
 var userId;
 var room;
 
